@@ -11,11 +11,14 @@ function createProfile()
     </div> 
   )   
 }
-function createMenu(value,name){
+
+function CreateMenu(prop){
+  console.log(prop)
+  const {name, value} =prop
     return (
       <div className="menu" style={{flexGrow :"1"}}>
         <h3>{value}</h3>
-        <p style = {{color : 'grey'}}>{name}</p>
+        <p style = {{color : 'grey'}}>{prop.name}</p>
       </div>
     )      
 }
@@ -23,7 +26,7 @@ function createMenu(value,name){
 function App() {
   const appStyle = 
     {
-      backgroundColor : "whitesmoke",
+      backgroundColor : "white",
       textAlign : "center",
       width  : "400px",
       margin : "auto",
@@ -35,9 +38,7 @@ function App() {
       <div className="App" style = {appStyle}>
           {createProfile()}
           <div style = {{display : "flex", flexDirection :"row"}}>
-            {createMenu("25","post")}
-            {createMenu("350","following")}
-            {createMenu("1.5k", "follower")}
+           <CreateMenu value="34" name="aaa"/>
           </div>
           
       </div>
